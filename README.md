@@ -10,7 +10,7 @@ DjangoModelViewer.show_attributes_and_relationships(Model, sort=True)
 
 Example Output
 
-```python
+```text
 > DjangoModelViewer.show_attributes_and_relationships(Skill, sort=True, reverse=False)
 
 Attributes
@@ -50,6 +50,22 @@ name
 
 type
 <type> * - this property is defined in the related class as a related_name
+```
 
-
+```mermaid
+classDiagram
+    class DjangoModelViewer {
+        +data_type: string
+        +attributes: [string]
+        +relation_attributes: [string]
+        +relationships: [string]
+        +attribute_list: [Dict]
+        +relation_attribute_list: [Dict]
+        +relationship_list: [Dict]
+        
+        +print_attributes(sort=True, reverse=False)
+        +print_relationships(sort=True, reverse=False)
+        +print_attributes_and_relationships(sort=True, reverse=False)
+        +show_attributes_and_relationships(sort=True, reverse=False)
+    }
 ```
