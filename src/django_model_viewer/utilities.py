@@ -132,7 +132,7 @@ class DjangoModelViewer:
 
         return result
 
-    def print_attributes(self, sort=False, reverse=False):
+    def print_attributes(self, sort=True, reverse=False):
         attributes_list = self.attribute_list
         if sort:
             attributes_list.sort(key=lambda e: e["name"], reverse=reverse)
@@ -174,7 +174,7 @@ class DjangoModelViewer:
         else:
             print("<None>")
 
-    def print_relationships(self, sort=False, reverse=False):
+    def print_relationships(self, sort=True, reverse=False):
         relationship_list = self.relationship_list
         relation_attribute_list = self.relation_attribute_list
 
@@ -261,7 +261,7 @@ class DjangoModelViewer:
         else:
             print("<None>")
 
-    def print_attributes_and_relationships(self, sort=False, reverse=False):
+    def print_attributes_and_relationships(self, sort=True, reverse=False):
         print("Attributes")
         print()
         self.print_attributes(sort=sort, reverse=reverse)
@@ -271,6 +271,6 @@ class DjangoModelViewer:
         self.print_relationships(sort=sort, reverse=reverse)
 
     @classmethod
-    def show_attributes_and_relationships(cls, data_type, sort=False, reverse=False):
+    def show_attributes_and_relationships(cls, data_type, sort=True, reverse=False):
         a_object_dom = cls(data_type)
         a_object_dom.print_attributes_and_relationships(sort=sort, reverse=reverse)
